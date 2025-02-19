@@ -8,7 +8,7 @@ const options = {
 	},
 };
 
-async function test() {
+async function testAuthentication() {
 	try {
 		const res = await axios.get("https://api.themoviedb.org/3/authentication", options);
 		console.log("res", res);
@@ -17,7 +17,7 @@ async function test() {
 	}
 }
 
-async function test2() {
+async function discoverMovies() {
 	const params = {
 		include_adult: "false",
 		include_video: "false",
@@ -36,4 +36,4 @@ async function test2() {
 	}
 }
 
-test2();
+discoverMovies();
