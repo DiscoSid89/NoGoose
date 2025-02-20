@@ -1,4 +1,23 @@
-h1 {
+.hero__pretitle {
+  color: rgb(97, 23, 23);
+  font-size: 2rem;
+}
+.hero__title {
+  font-family: fantasy;
   color: red;
-  font-size: large;
+  font-size: 5rem;
+}
+
+.instructions {
+  display: flex;
+  align-items: center;
+}
+.instructions__list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
+}
+.instructions__list-items {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }/*# sourceMappingURL=index.css.map */

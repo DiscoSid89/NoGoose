@@ -1,1 +1,12 @@
-/*# sourceMappingURL=trivia-pg.css.map */
+.header {
+  font-family: fantasy;
+  color: red;
+  font-size: 5rem;
+}
+
+.synopsis-gen {
+  box-sizing: border-box;
+  border: 1rem solid rgb(240, 213, 58);
+  min-height: 10rem;
+  width: 100%;
+}/*# sourceMappingURL=trivia-pg.css.map */
