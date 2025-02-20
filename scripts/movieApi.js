@@ -52,12 +52,24 @@ export class MovieApi {
 
 		try {
 			const res = await axios.get(`${this.baseUrl}/search/movie`, { ...this.options, params });
-			// console.log(res);
-			// testing.textContent = JSON.stringify(res.data.results);
 			return res;
 		} catch (err) {
 			console.error(err);
 		}
+	}
+
+	async getMovieGenres() {
+		try {
+			const res = await axios.get(`${this.baseUrl}/genre/movie/list`, this.options);
+			return res.data.genres;
+		} catch (err) {
+			console.error(err);
+		}
+	}
+
+	parseGenre(genreArray, genreId) {
+		const genreArr = genreArray.filter((genre) => genre.id === genreId);
+		return genreArr[0].name;
 	}
 
 	getMoviePoster(imgUrl) {
