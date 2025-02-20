@@ -12,23 +12,26 @@
 	<body>
 		<header class="header">MOVIE TRIVIA</header>
 		<main class="main__container">
-			
 			<div class="synopsis-gen">Synopsis Generator</div>
-			
+
 			<div class="hint">
 				<div class="hint__container">
 					<div class="hint__background-image-container">
 						<img
-							class="hint__background-image"
+							class="hint__background-image hint__background-image--hidden"
 							src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
 							alt="Movie Poster Background"
 						/>
 					</div>
-					<div class="hint__genre">genre</div>
-					<div class="hint__year">year</div>
+					<div class="hint__genre hint__genre--hidden">genre</div>
+					<div class="hint__year hint__year--hidden">year</div>
 				</div>
 			</div>
-			<div class="quiz__answer">"answer"</div>
+
+			<div class="quiz__answer-container">
+				<p class="quiz__answer quiz__answer--hidden">"answer"</p>
+			</div>
+
 			<section>
 				<form class="input-box__form">
 					<label class="input-box__label">

@@ -1,3 +1,8 @@
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .header {
   display: flex;
   justify-content: center;
@@ -30,13 +35,16 @@
   }
 }
 
-.quiz__answer {
+.quiz__answer-container {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0.5rem solid;
   font: 700;
   padding: 1rem;
+}
+.quiz__answer--hidden {
+  visibility: hidden;
 }
 
 .hint__container {
@@ -60,9 +68,12 @@
 }
 @media screen and (min-width: 768px) {
   .hint__background-image {
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
+}
+.hint__background-image--hidden {
+  visibility: hidden;
 }
 .hint__genre {
   position: absolute;
@@ -78,6 +89,9 @@
   font-size: larger;
   font-weight: bold;
 }
+.hint__genre--hidden {
+  visibility: hidden;
+}
 .hint__year {
   position: absolute;
   bottom: 2rem;
@@ -91,6 +105,9 @@
   color: gold;
   font-size: larger;
   font-weight: bold;
+}
+.hint__year--hidden {
+  visibility: hidden;
 }
 
 .input-box__form {

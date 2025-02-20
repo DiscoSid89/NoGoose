@@ -1,6 +1,7 @@
 import { MovieApi } from "./movieApi.js";
 
 const api = new MovieApi();
+let counter = 0;
 
 const movieList = await api.getPopularMovies();
 console.log(movieList);
@@ -11,14 +12,11 @@ const chosenMovie = movieList.data.results[randomNumber];
 
 console.log("chosenMovie", chosenMovie);
 
-
-
 //answer
 const quizAnswer = document.querySelector(".quiz__answer");
-quizAnswer.textContent =`${chosenMovie.title}`;
+quizAnswer.textContent = `${chosenMovie.title}`;
 
 console.log("title", chosenMovie.title);
-
 
 //Synopsis
 const synopsis = document.querySelector(".synopsis-gen");
@@ -26,9 +24,9 @@ synopsis.textContent = `"${chosenMovie.overview}"`;
 
 console.log("overview", chosenMovie.overview);
 
-
 //backdrop image
 const moviePoster = api.getMoviePoster(chosenMovie.backdrop_path);
+const RealMoviePoster = api.getMoviePoster(chosenMovie.poster_path);
 
 const image = document.querySelector(".hint__background-image");
 
@@ -48,7 +46,6 @@ console.log("actualMovieGenre", actualMovieGenre);
 const realMovieGenre = document.querySelector(".hint__genre");
 realMovieGenre.textContent = `${actualMovieGenre}`;
 
-
 // // ------------year----------------- //
 
 const movieReleaseDate = chosenMovie.release_date;
@@ -57,4 +54,43 @@ console.log("movieReleaseDate", movieReleaseDate);
 
 const yearHint = document.querySelector(".hint__year");
 
-yearHint.textContent =`${movieReleaseDate}`;
+yearHint.textContent = `${movieReleaseDate}`;
+
+function winGame() {
+	realMovieGenre.classList.remove("hint__genre--hidden");
+	yearHint.classList.remove("hint__year--hidden");
+	image.classList.remove("hint__background-image--hidden");
+	quizAnswer.classList.remove("quiz__answer--hidden");
+	image.src = RealMoviePoster;
+}
+
+document.addEventListener("submit", (e) => {
+	e.preventDefault();
+
+	const answer = e.target.inputGuess.value.toLowerCase();
+
+	if (answer === chosenMovie.title.toLowerCase()) {
+		winGame();
+	} else {
+		counter++;
+
+		switch (counter) {
+			case 1:
+				realMovieGenre.classList.remove("hint__genre--hidden");
+				break;
+			case 2:
+				yearHint.classList.remove("hint__year--hidden");
+				break;
+			case 3:
+				image.classList.remove("hint__background-image--hidden");
+				break;
+			case 4:
+				quizAnswer.classList.remove("quiz__answer--hidden");
+				image.src = RealMoviePoster;
+			default:
+				break;
+		}
+	}
+
+	e.target.reset();
+});
