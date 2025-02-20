@@ -65,12 +65,32 @@ yearHint.forEach((yearElement) => {
 	yearElement.textContent = `${movieReleaseDate}`;
 });
 
+function showModal(value, result) {
+	const modal = document.querySelector(".main__win-alert");
+	const modalLabels = document.querySelectorAll(".main__content-image-label");
+	const modalBackground = document.querySelector(".main__win-content");
+
+	if (value === true) {
+		modal.classList.remove("main__win-alert--hide");
+
+		modalLabels.forEach((label) => {
+			label.textContent = result ? "You win at the Oscars!" : "Your goose is cooked!";
+		});
+
+		modalBackground.classList.add("main__win-content--win");
+	} else {
+		modal.classList.add("main__win-alert--hide");
+		modalBackground.classList.add("main__win-content--lose");
+	}
+}
+
 function winGame() {
-	realMovieGenre.classList.remove("hint__genre--hidden");
-	yearHint.classList.remove("hint__year--hidden");
-	image.classList.remove("hint__background-image--hidden");
+	realMovieGenre[1].classList.remove("hint__genre--hidden");
+	yearHint[1].classList.remove("hint__year--hidden");
+	image[1].classList.remove("hint__background-image--hidden");
 	quizAnswer.classList.remove("quiz__answer--hidden");
-	image.src = RealMoviePoster;
+	image[1].src = RealMoviePoster;
+	showModal(true, true);
 }
 
 document.addEventListener("submit", (e) => {
@@ -85,17 +105,18 @@ document.addEventListener("submit", (e) => {
 
 		switch (counter) {
 			case 1:
-				realMovieGenre.classList.remove("hint__genre--hidden");
+				realMovieGenre[1].classList.remove("hint__genre--hidden");
 				break;
 			case 2:
-				yearHint.classList.remove("hint__year--hidden");
+				yearHint[1].classList.remove("hint__year--hidden");
 				break;
 			case 3:
-				image.classList.remove("hint__background-image--hidden");
+				image[1].classList.remove("hint__background-image--hidden");
 				break;
 			case 4:
 				quizAnswer.classList.remove("quiz__answer--hidden");
-				image.src = RealMoviePoster;
+				image[1].src = RealMoviePoster;
+				showModal(true, false);
 			default:
 				break;
 		}

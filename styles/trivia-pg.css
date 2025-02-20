@@ -28,6 +28,13 @@
   left: 0;
   z-index: 1;
 }
+.main__win-alert--hide {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  visibility: hidden;
+}
 .main__win-content {
   display: flex;
   flex-direction: column;

@@ -30,6 +30,12 @@
 		top: 0;
 		left: 0;
 		z-index: 1;
+
+		&--hide {
+			pointer-events: none;
+			user-select: none;
+			visibility: hidden;
+		}
 	}
 
 	&__win-content {
