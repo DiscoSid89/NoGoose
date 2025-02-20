@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/trivia-pg.css" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="./scripts/scripts.js" type="module"></script>
+		<title>No Goose Trivia page</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/trivia-pg.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./scripts/scripts.js" type="module"></script>
-    <title>No Goose Trivia page</title>
-</head>
-
-<body>
-    <header class="header">
-        MOVIE TRIVIA
-    </header>
-    <main>
-        <div class="synopsis-gen">
-            Synopsis Generator
-        </div>
-        <div class="hint">
-            Hint Screen
-            <div class="hint__container">
-                <img src="" alt="Movie Poster Background">
-                <div class="hint__genre">
-                    genre
-                </div>
-                <div class="hint__year">
-                    year
-                </div>
-            </div>
-        </div>
-        <section>
-            <form class="input-box">
-                <label class="input-box__label"> <input name="inputGuess" id="inputGuess" class="input-box__input" type="text"></label>
-                <button type="submit">SUBMIT</button>
-            </form>
-        </section>
-    </main>
-
-</body>
-
+	<body>
+		<header class="header">MOVIE TRIVIA</header>
+		<main>
+			<div class="synopsis-gen">Synopsis Generator</div>
+			<div class="hint">
+				Hint Screen
+				<div class="hint__container">
+					<div class="hint__background-image-container">
+						<img
+							class="hint__background-image"
+							src="https://placecats.com/200/100"
+							alt="Movie Poster Background"
+						/>
+					</div>
+					<div class="hint__genre">genre</div>
+					<div class="hint__year">year</div>
+				</div>
+			</div>
+			<section>
+				<form class="input-box">
+					<label class="input-box__label">
+						<input name="inputGuess" id="inputGuess" class="input-box__input" type="text"
+					/></label>
+					<button type="submit">SUBMIT</button>
+				</form>
+			</section>
+		</main>
+	</body>
 </html>
