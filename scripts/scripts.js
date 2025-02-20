@@ -28,9 +28,11 @@ console.log("overview", chosenMovie.overview);
 const moviePoster = api.getMoviePoster(chosenMovie.backdrop_path);
 const RealMoviePoster = api.getMoviePoster(chosenMovie.poster_path);
 
-const image = document.querySelector(".hint__background-image");
+const image = document.querySelectorAll(".hint__background-image");
 
-image.src = moviePoster;
+image[0].src = RealMoviePoster;
+image[1].src = moviePoster;
+
 // console.log(moviePoster);
 
 // // ----------- genre ----------- //
@@ -43,8 +45,11 @@ const actualMovieGenre = api.parseGenre(genreList, movieGenre[0]);
 
 console.log("actualMovieGenre", actualMovieGenre);
 
-const realMovieGenre = document.querySelector(".hint__genre");
-realMovieGenre.textContent = `${actualMovieGenre}`;
+const realMovieGenre = document.querySelectorAll(".hint__genre");
+
+realMovieGenre.forEach((labelElement) => {
+	labelElement.textContent = `${actualMovieGenre}`;
+});
 
 // // ------------year----------------- //
 
@@ -52,9 +57,11 @@ const movieReleaseDate = chosenMovie.release_date;
 
 console.log("movieReleaseDate", movieReleaseDate);
 
-const yearHint = document.querySelector(".hint__year");
+const yearHint = document.querySelectorAll(".hint__year");
 
-yearHint.textContent = `${movieReleaseDate}`;
+yearHint.forEach((yearElement) => {
+	yearElement.textContent = `${movieReleaseDate}`;
+});
 
 function winGame() {
 	realMovieGenre.classList.remove("hint__genre--hidden");
