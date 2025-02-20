@@ -12,6 +12,7 @@ export class MovieApi {
 		};
 	}
 
+	///testing authentication
 	async testAuthentication() {
 		try {
 			const res = await axios.get(`${this.baseUrl}/authentication`, this.options);
@@ -21,6 +22,7 @@ export class MovieApi {
 		}
 	}
 
+	//functions
 	async discoverMovies() {
 		const params = {
 			include_adult: "false",
@@ -38,9 +40,10 @@ export class MovieApi {
 		}
 	}
 
-	async findMovieByName(query, page = 1) {
+	//
+	async findMovieByName(name, page = 1) {
 		const params = {
-			query,
+			query: name,
 			include_adult: "false",
 			language: "en-US",
 			page,
@@ -49,15 +52,15 @@ export class MovieApi {
 
 		try {
 			const res = await axios.get(`${this.baseUrl}/search/movie`, { ...this.options, params });
-			console.log(res);
-			testing.textContent = JSON.stringify(res.data.results);
+			// console.log(res);
+			// testing.textContent = JSON.stringify(res.data.results);
 			return res;
 		} catch (err) {
 			console.error(err);
 		}
 	}
 
-	async getMoviePoster(imgUrl) {
+	getMoviePoster(imgUrl) {
 		return `https://image.tmdb.org/t/p/original${imgUrl}`;
 	}
 }
