@@ -77,10 +77,9 @@ function showModal(value, result) {
 			label.textContent = result ? "You win at the Oscars!" : "Your goose is cooked!";
 		});
 
-		modalBackground.classList.add("main__win-content--win");
+		result ? modalBackground.classList.add("main__win-content--win"): modalBackground.classList.add("main__win-content--lose");
 	} else {
 		modal.classList.add("main__win-alert--hide");
-		modalBackground.classList.add("main__win-content--lose");
 	}
 }
 
@@ -124,5 +123,12 @@ document.addEventListener("submit", (e) => {
 
 	e.target.reset();
 });
+
+
+//replay button
+const replyButton = document.querySelector(".main__win-cta") 
+replyButton.addEventListener ("click", (event) => {
+    window.location.reload ();
+})
 
 // alert(`hello!`);
