@@ -5,8 +5,15 @@ body {
 }
 
 .hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+
 	&__pretitle {
-		color: rgb(97, 23, 23);
+		background-color:  rgb(97, 23, 23);
+		color: white;
 		font-size: 2rem;
 	}
 
@@ -14,6 +21,12 @@ body {
 		font-family: fantasy;
 		color: red;
 		font-size: 5rem;
+	}
+
+	&__image {
+		box-sizing: border-box;
+		max-height: 18.75rem;
+		max-width:fit-content;
 	}
 }
 
@@ -40,6 +53,7 @@ body {
 	}
 
 	&__next-pg {
-		padding: 0 4rem;	
+		padding: 1rem 5rem;
+		font-weight: 700;
 	 }
 }

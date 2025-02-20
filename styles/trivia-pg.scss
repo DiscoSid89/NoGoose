@@ -156,8 +156,8 @@
 
 	&__genre {
 		position: absolute;
-		bottom: 2rem;
-		left: 2rem;
+		bottom: -1rem;
+		left: -3.5rem;
 		min-width: 100px;
 		text-align: center;
 		padding: 1rem;
@@ -174,8 +174,8 @@
 	}
 	&__year {
 		position: absolute;
-		bottom: 2rem;
-		right: 2rem;
+		bottom: -1rem;
+		right: -3.5rem;
 		min-width: 100px;
 		text-align: center;
 		padding: 1rem;
