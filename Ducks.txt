@@ -1,0 +1,10 @@
+What do we want to do with movies?
+
+
+Overview synopsis?
+few changes to guess movie?
+
+
+
+Show Posters? yes
+get movie by name? yes
