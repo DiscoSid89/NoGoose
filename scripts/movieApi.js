@@ -22,24 +22,18 @@ export class MovieApi {
 		}
 	}
 
-	//functions
-	async discoverMovies() {
-		const params = {
-			include_adult: "false",
-			include_video: "false",
-			language: "en-US",
-			page: "1",
-			sort_by: "popularity.desc",
-		};
+	async getPopularMovies() {
+		const randomNumber = String(Math.floor(Math.random() * 500) + 1);
+
+		const params = { language: "en-US", page: randomNumber };
 
 		try {
-			const res = await axios.get(`${this.baseUrl}/discover/movie`, { ...this.options, params });
+			const res = await axios.get(`${this.baseUrl}/movie/top_rated`, { ...this.options, params });
 			return res;
 		} catch (err) {
 			console.error(err);
 		}
 	}
-
 	//
 	async findMovieByName(name, page = 1) {
 		const params = {
