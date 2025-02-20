@@ -1,9 +1,26 @@
 h1 {
-    color: red;
-    font-size: large;
+	color: red;
+	font-size: large;
 }
 
-h2{
-
+h2 {
 }
 
+.hero {
+	&__pretitle {
+	}
+
+	&__title {
+	}
+}
+
+.instructions {
+	&__list {
+	}
+
+	&__list-items {
+	}
+
+	&__next-pg {
+	}
+}
