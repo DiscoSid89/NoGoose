@@ -1,4 +1,6 @@
 .header {
+  display: flex;
+  justify-content: center;
   font-family: fantasy;
   color: red;
   font-size: 5rem;
@@ -42,4 +44,25 @@
   text-align: center;
   padding: 1rem;
   background-color: beige;
+}
+
+.input-box__form {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: space-between;
+  width: 100%;
+}
+.input-box__label {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.input-box__input {
+  box-sizing: border-box;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
 }/*# sourceMappingURL=trivia-pg.css.map */

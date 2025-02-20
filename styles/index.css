@@ -1,3 +1,7 @@
+body {
+  padding: 1rem 3rem;
+}
+
 .hero__pretitle {
   color: rgb(97, 23, 23);
   font-size: 2rem;
@@ -10,7 +14,15 @@
 
 .instructions {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .instructions {
+    flex-direction: row;
+  }
 }
 .instructions__list {
   display: flex;
@@ -20,4 +32,7 @@
 }
 .instructions__list-items {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.instructions__next-pg {
+  padding: 0 4rem;
 }/*# sourceMappingURL=index.css.map */

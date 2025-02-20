@@ -1,5 +1,9 @@
 @use "./partials/mixins" as *;
 
+body {
+	padding: 1rem 3rem;
+}
+
 .hero {
 	&__pretitle {
 		color: rgb(97, 23, 23);
@@ -15,7 +19,14 @@
 
 .instructions {
 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width:100%;
 	align-items: center;
+
+	@include tablet {
+		flex-direction: row;
+	}
 
 	&__list {
 		display: flex;
@@ -29,6 +40,6 @@
 	}
 
 	&__next-pg {
-		
-	}
+		padding: 0 4rem;	
+	 }
 }
