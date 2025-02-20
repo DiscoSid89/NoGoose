@@ -14,7 +14,9 @@ console.log("chosenMovie", chosenMovie);
 
 //answer
 const quizAnswer = document.querySelector(".quiz__answer");
+const modalTitle = document.querySelector(".main__win-content-title");
 quizAnswer.textContent = `${chosenMovie.title}`;
+modalTitle.textContent = `${chosenMovie.title}`;
 
 console.log("title", chosenMovie.title);
 
