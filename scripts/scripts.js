@@ -69,12 +69,19 @@ function showModal(value, result) {
 	const modal = document.querySelector(".main__win-alert");
 	const modalLabels = document.querySelectorAll(".main__content-image-label");
 	const modalBackground = document.querySelector(".main__win-content");
+    const modalImage = document.querySelectorAll(".main__modal-image");
+
+    console.log(modalImage);
 
 	if (value === true) {
 		modal.classList.remove("main__win-alert--hide");
 
 		modalLabels.forEach((label) => {
 			label.textContent = result ? "You win at the Oscars!" : "Your goose is cooked!";
+		});
+
+        modalImage.forEach((image1) => {
+			image1.src = result ? "../assets/win_oscars.jpg" : "../assets/gooseisCooked.jpg";
 		});
 
 		result ? modalBackground.classList.add("main__win-content--win"): modalBackground.classList.add("main__win-content--lose");
