@@ -1,5 +1,39 @@
+@font-face {
+  font-family: "Smokum";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/font/Smokum/Smokum-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/font/roboto/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/assets/font/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Calibri";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/font/calibri/calibri-regular.ttf") format("truetype");
+}
+* {
+  font-family: "Calibri";
+  font-size: inherit;
+  line-height: initial;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 1rem 3rem;
+  padding: 1rem;
 }
 
 .hero__pretitle {
@@ -7,9 +41,9 @@ body {
   font-size: 2rem;
 }
 .hero__title {
-  font-family: fantasy;
-  color: red;
+  font-family: Calibri;
   font-size: 5rem;
+  color: red;
 }
 
 .instructions {
@@ -31,7 +65,11 @@ body {
   gap: 1rem;
 }
 .instructions__list-items {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Roboto";
+  font-size: inherit;
+  line-height: initial;
+  font-weight: 400;
+  font-style: normal;
 }
 .instructions__next-pg {
   padding: 0 4rem;

@@ -1,9 +1,48 @@
+@font-face {
+  font-family: "Smokum";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/font/Smokum/Smokum-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/font/roboto/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/assets/font/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Calibri";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/font/calibri/calibri-regular.ttf") format("truetype");
+}
+* {
+  font-family: "Calibri";
+  font-size: inherit;
+  line-height: initial;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 1rem;
+}
+
 .header {
   display: flex;
   justify-content: center;
-  font-family: fantasy;
-  color: red;
+  font-family: Calibri;
   font-size: 5rem;
+  padding: 1rem;
+  color: red;
 }
 
 .main {
@@ -42,10 +81,14 @@
   align-items: center;
   border-radius: 1rem;
   background-color: white;
-  width: 90%;
-  min-height: 500px;
+  width: 100%;
   padding: 1rem;
   box-shadow: 6px 14px 45px 0px rgba(0, 0, 0, 0.75);
+}
+@media screen and (min-width: 768px) {
+  .main__win-content {
+    width: 90%;
+  }
 }
 .main__win-content--win {
   background-color: rgb(139, 229, 139);
@@ -80,7 +123,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 0 2rem;
   box-sizing: border-box;
   border: 1rem solid gold;
   min-height: 10rem;
@@ -88,7 +131,7 @@
 }
 @media screen and (min-width: 768px) {
   .synopsis-gen {
-    padding: 4rem;
+    padding: 0 4rem;
   }
 }
 
@@ -113,6 +156,7 @@
 .hint__container {
   position: relative;
   border: 1rem solid gold;
+  width: 100%;
 }
 .hint__background-image-container {
   height: 100%;
@@ -140,8 +184,8 @@
 }
 .hint__genre {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 0;
+  left: 0;
   min-width: 100px;
   text-align: center;
   padding: 1rem;
@@ -151,14 +195,20 @@
   color: gold;
   font-size: larger;
   font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .hint__genre {
+    bottom: 2rem;
+    left: 2rem;
+  }
 }
 .hint__genre--hidden {
   visibility: hidden;
 }
 .hint__year {
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 0;
+  right: 0;
   min-width: 100px;
   text-align: center;
   padding: 1rem;
@@ -168,6 +218,12 @@
   color: gold;
   font-size: larger;
   font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .hint__year {
+    bottom: 2rem;
+    right: 2rem;
+  }
 }
 .hint__year--hidden {
   visibility: hidden;
