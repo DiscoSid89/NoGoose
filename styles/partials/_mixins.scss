@@ -2,13 +2,21 @@ $min-tablet: 768px;
 $min-desktop: 1280px;
 
 @mixin tablet {
-    @media screen and (min-width: $min-tablet) {
-        @content;
-    }
+	@media screen and (min-width: $min-tablet) {
+		@content;
+	}
 }
 
 @mixin desktop {
-    @media screen and (min-width: $min-desktop) {
-        @content;
-    }
+	@media screen and (min-width: $min-desktop) {
+		@content;
+	}
+}
+
+@mixin use-font($name, $size: inherit, $line-height: initial, $weight: 400, $style: normal) {
+	font-family: $name;
+	font-size: $size;
+	line-height: $line-height;
+	font-weight: $weight;
+	font-style: $style;
 }

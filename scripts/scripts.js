@@ -69,9 +69,9 @@ function showModal(value, result) {
 	const modal = document.querySelector(".main__win-alert");
 	const modalLabels = document.querySelectorAll(".main__content-image-label");
 	const modalBackground = document.querySelector(".main__win-content");
-    const modalImage = document.querySelectorAll(".main__modal-image");
+	const modalImage = document.querySelectorAll(".main__modal-image");
 
-    console.log(modalImage);
+	console.log(modalImage);
 
 	if (value === true) {
 		modal.classList.remove("main__win-alert--hide");
@@ -80,11 +80,13 @@ function showModal(value, result) {
 			label.textContent = result ? "You win at the Oscars!" : "Your goose is cooked!";
 		});
 
-        modalImage.forEach((image1) => {
+		modalImage.forEach((image1) => {
 			image1.src = result ? "../assets/win_oscars.jpg" : "../assets/gooseisCooked.jpg";
 		});
 
-		result ? modalBackground.classList.add("main__win-content--win"): modalBackground.classList.add("main__win-content--lose");
+		result
+			? modalBackground.classList.add("main__win-content--win")
+			: modalBackground.classList.add("main__win-content--lose");
 	} else {
 		modal.classList.add("main__win-alert--hide");
 	}
@@ -131,11 +133,10 @@ document.addEventListener("submit", (e) => {
 	e.target.reset();
 });
 
-
 //replay button
-const replyButton = document.querySelector(".main__win-cta") 
-replyButton.addEventListener ("click", (event) => {
-    window.location.reload ();
-})
+const replyButton = document.querySelector(".main__win-cta");
+replyButton.addEventListener("click", (event) => {
+	window.location.reload();
+});
 
 // alert(`hello!`);
