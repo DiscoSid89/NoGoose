@@ -1,0 +1,12 @@
+@use "./fonts" as *;
+@use "./mixins" as *;
+
+* {
+	@include use-font("Calibri");
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 1rem;
+}

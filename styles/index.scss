@@ -1,8 +1,5 @@
+@use "./partials" as *;
 @use "./partials/mixins" as *;
-
-body {
-	padding: 1rem 3rem;
-}
 
 .hero {
 	display: flex;
@@ -18,9 +15,9 @@ body {
 	}
 
 	&__title {
-		font-family: fantasy;
-		color: red;
+		font-family: Calibri;
 		font-size: 5rem;
+		color: red;
 	}
 
 	&__image {
@@ -34,7 +31,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width:100%;
+	width: 100%;
 	align-items: center;
 
 	@include tablet {
@@ -49,7 +46,7 @@ body {
 	}
 
 	&__list-items {
-		font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		@include use-font("Roboto");
 	}
 
 	&__next-pg {
